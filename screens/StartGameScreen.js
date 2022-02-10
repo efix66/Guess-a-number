@@ -13,7 +13,7 @@ import Colors from "../constants/Colors";
 import Input from "../components/Input";
 import NumberContainer from "../components/NumberContainer";
 
-const StartGameScreen = () => {
+const StartGameScreen = (props) => {
   //Validate what user enters, digits(just numbers) STATE
   const [enteredValue, setEnteredValue] = useState("");
 
@@ -33,7 +33,7 @@ const StartGameScreen = () => {
     Keyboard.dismiss();
   };
 
-  const resetInputHadeler = () => {
+  const resetInputHandeler = () => {
     //Reset number entered
     setEnteredValue("");
     setConfirmed(false);
@@ -56,6 +56,7 @@ const StartGameScreen = () => {
   };
 
   let confirmedOutput;
+
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.sumaryContainer}>
@@ -89,7 +90,7 @@ const StartGameScreen = () => {
             <View style={styles.buttonStyle}>
               <Button
                 title="Reset"
-                onPress={resetInputHadeler}
+                onPress={resetInputHandeler}
                 color={Colors.primary}
               />
             </View>

@@ -3,15 +3,14 @@ import Header from "./components/Header";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./components/GameScreen";
 import { useState } from "react";
-
 export default function App() {
   const [userNumber, setUserNumber] = useState();
 
-  const startGameHandeler = (selectedNumber) => {
+  const startGameHandler = (selectedNumber) => {
     setUserNumber(selectedNumber);
   };
 
-  let content = <StartGameScreen onStartGame={startGameHandeler} />;
+  let content = <StartGameScreen onStartGame={startGameHandler} />;
 
   if (userNumber) {
     content = <GameScreen userChoice={userNumber} />;
